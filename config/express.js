@@ -40,7 +40,8 @@ module.exports = function (app, config, passport) {
     app.use(express.cookieParser())
 
     // bodyParser should be above methodOverride
-    app.use(express.bodyParser())
+    app.use(express.json());
+    app.use(express.urlencoded());
     app.use(express.methodOverride())
 
     // express/mongo session storage
